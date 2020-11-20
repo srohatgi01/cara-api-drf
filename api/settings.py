@@ -25,7 +25,7 @@ SECRET_KEY = 't*&cbm$k8@0&ca9p)o%_wm(gkac@tw7ayh&@s&yemqrjhw*c8f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['eywa.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['infinity726.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -121,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/infinity726/cara-api/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'assets/')
 MEDIA_URL = '/assets/'
 
