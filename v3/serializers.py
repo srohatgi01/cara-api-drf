@@ -108,7 +108,7 @@ class UserAppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = [
-                    'id',
+                    'uuid',
                     'first_name',
                     'last_name',
                     'email_id',
@@ -163,17 +163,14 @@ class AppointmentSerializer(serializers.ModelSerializer):
     branch = ZorgBranchAppointmentSerializer()
     class Meta:
         model = Appointment
-        fields = [
-                'id', 
-                'status',
+        fields = ['id', 'status',
                 'appointment',
                 'user',
                 'zorg',
                 'branch',
                 'timestamp',
                 'totaltime',
-                'total_price'
-            ]
+                'total_price']
 
     def create(self, validated_data):
         user = validated_data.pop('user')

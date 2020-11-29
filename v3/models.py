@@ -32,12 +32,12 @@ class Zorg(models.Model):
     open_year_of_salon = models.CharField(max_length=4)
     website            = models.URLField(max_length=100, blank=True)
     base_rating        = models.IntegerField(default=2)
-    profile_photo      = models.ImageField(upload_to='zorg/profile_photo/', null=True, blank=True, max_length=200)
-    cover_photo        = models.ImageField(upload_to='zorg/cover_photo/', null=True, blank=True, max_length=200)
-    photo_1            = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
-    photo_2            = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
-    photo_3            = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
-    photo_4            = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
+    profile_photo = models.ImageField(upload_to='zorg/profile_photo/', null=True, blank=True, max_length=200)
+    cover_photo = models.ImageField(upload_to='zorg/cover_photo/', null=True, blank=True, max_length=200)
+    photo_1 = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
+    photo_2 = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
+    photo_3 = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
+    photo_4 = models.ImageField(upload_to='zorg/zorg_images/', null=True, blank=True, max_length=200)
     joined             = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     
 
@@ -82,10 +82,10 @@ class Appointment_Status(models.Model):
 # as many records to the "AppointmentDetail" model as the number of services the user booked.
 class Appointment(models.Model):
     """This is the model where all the orders/Appointments will be saved"""
-    user        = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    zorg        = models.ForeignKey(Zorg, on_delete=models.CASCADE, null=True)
-    branch      = models.ForeignKey(Zorg_Branche, on_delete=models.CASCADE,null=True, related_name='branch')
-    timestamp   = models.DateTimeField(auto_now_add=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='user')
+    zorg = models.ForeignKey(Zorg, on_delete=models.CASCADE, null=True)
+    branch = models.ForeignKey(Zorg_Branche, on_delete=models.CASCADE, null=True, related_name='branch')
+    timestamp = models.DateTimeField(auto_now_add=True, blank=True)
     status      = models.ForeignKey(Appointment_Status, on_delete=models.CASCADE, null=True)
     totaltime   = models.PositiveIntegerField(default=0)
     total_price = models.DecimalField(decimal_places=2, max_digits=10, default=0)
