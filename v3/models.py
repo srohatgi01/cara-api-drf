@@ -148,12 +148,13 @@ class Advertisment(models.Model):
     # datetime = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     # link = models.URLField(max_length=255)
     photo_1 = models.ImageField(
-        upload_to='zorg/advertisment_images/', null=True, blank=True, max_length=200)
+        upload_to='advertisments/', null=True, blank=True, max_length=200)
     photo_2 = models.ImageField(
-        upload_to='zorg/advertisment_images/', null=True, blank=True, max_length=200)
+        upload_to='advertisments/', null=True, blank=True, max_length=200)
     photo_3 = models.ImageField(
-        upload_to='zorg/advertisment_images/', null=True, blank=True, max_length=200)
+        upload_to='advertisments/', null=True, blank=True, max_length=200)
     photo_4 = models.ImageField(
-        upload_to='zorg/advertisment_images/', null=True, blank=True, max_length=200)
+        upload_to='advertisments/', null=True, blank=True, max_length=200)
     photo_5 = models.ImageField(
-        upload_to='zorg/advertisment_images/', null=True, blank=True, max_length=200)
+        upload_to='advertisments/', null=True, blank=True, max_length=200)
+        

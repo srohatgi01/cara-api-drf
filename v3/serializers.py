@@ -206,7 +206,8 @@ class AppointmentSerializer(serializers.ModelSerializer):
         appointment_services = validated_data.pop('appointment')
 
         appointment = Appointment.objects.create(
-            user=user_instance, zorg=zorg_instance, status=status_instance, branch=branch_instance, **validated_data)
+            user=user_instance, zorg=zorg_instance, status=status_instance, branch=branch_instance,
+            **validated_data)
 
         for services in appointment_services:
             service = services.pop('service')
@@ -229,4 +230,11 @@ class AdvertismentSerilizer(serializers.ModelSerializer):
     """
     class Meta:
         model = Advertisment
-        fields = '__all__'
+        fields = [
+            'id',
+            'photo_1',
+            'photo_2',
+            'photo_3',
+            'photo_4',
+            'photo_5'
+        ]
