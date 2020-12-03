@@ -105,6 +105,7 @@ class Appointment(models.Model):
     zorg = models.ForeignKey(Zorg, on_delete=models.CASCADE, null=True)
     branch = models.ForeignKey(
         Zorg_Branche, on_delete=models.CASCADE, null=True, related_name='branch')
+    appointment_time = models.DateTimeField(auto_now_add=False, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True, blank=True)
     status = models.ForeignKey(
         Appointment_Status, on_delete=models.CASCADE, null=True)

@@ -187,6 +187,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
                   'appointment',
                   'user',
                   'zorg',
+                  'appointment_time',
                   'branch',
                   'timestamp',
                   'totaltime',
